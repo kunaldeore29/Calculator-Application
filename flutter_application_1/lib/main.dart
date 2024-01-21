@@ -4,10 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colors.dart';
 import 'package:math_expressions/math_expressions.dart';
 
+/// The code sets up a Dart application with a MaterialApp widget that serves as the home screen for a
+/// calculator app.
 void main() {
   runApp(MyApp());
 }
 
+/// The `MyApp` class is a stateless widget that represents the main application and sets up the
+/// `MaterialApp` with a `CalculatorApp` as the home screen.
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -21,6 +25,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/// The `CalculatorApp` class is a stateful widget in Dart.
 class CalculatorApp extends StatefulWidget {
   const CalculatorApp({Key? key}) : super(key: key);
 
@@ -28,6 +33,8 @@ class CalculatorApp extends StatefulWidget {
   State<CalculatorApp> createState() => _CalculatorAppState();
 }
 
+/// The `_CalculatorAppState` class is a stateful widget that represents the UI and functionality of a
+/// calculator app in Dart.
 class _CalculatorAppState extends State<CalculatorApp> {
   double fno = 0.0;
   double sno = 0.0;
@@ -37,6 +44,13 @@ class _CalculatorAppState extends State<CalculatorApp> {
   var hideinput = false;
   var outputsize = 34.0;
 
+  /// The function handles button clicks in a calculator app, performing different actions based on the
+  /// value of the clicked button.
+  /// 
+  /// Args:
+  ///   value: The value parameter represents the value of the button that was clicked. It could be any
+  /// string value that corresponds to the button's functionality, such as a number, an operator, or a
+  /// special command like "AC" or "<-".
   onbuttonclick(value) {
     if (value == "AC") {
       input = '';
@@ -70,6 +84,20 @@ class _CalculatorAppState extends State<CalculatorApp> {
     setState(() {});
   }
 
+  /// This function builds a calculator app interface using the Flutter framework in Dart.
+  /// 
+  /// Args:
+  ///   context (BuildContext): The `context` parameter is a required parameter in the `build` method of
+  /// a `StatefulWidget`. It represents the current build context of the widget tree. It is typically
+  /// used to access the theme, localization, and other information related to the widget's position in
+  /// the widget tree.
+  /// 
+  /// Returns:
+  ///   The code is returning a Scaffold widget with a black background. The body of the Scaffold is a
+  /// Column widget containing multiple Rows and a Container. The Container is expanded to take up all
+  /// available space and has a dark gray color. Inside the Container, there are two Text widgets for
+  /// displaying input and output, and some SizedBox widgets for spacing. Below the Container, there are
+  /// several Rows of buttons for performing calculations
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -156,6 +184,8 @@ class _CalculatorAppState extends State<CalculatorApp> {
     );
   }
 
+  /// The `button` function is a helper function that creates a custom button widget used in the
+  /// calculator app. It takes three optional parameters: `text`, `tcolor`, and `buttonbgColor`.
   Widget button({text, tcolor = Colors.white, buttonbgColor = buttonColor}) {
     return Expanded(
       child: Container(
