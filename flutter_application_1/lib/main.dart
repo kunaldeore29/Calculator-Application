@@ -81,6 +81,12 @@ class _CalculatorAppState extends State<CalculatorApp> {
       hideinput = false;
         outputsize = 34;
     }
+    /// `setState(() {});` is a method in Flutter that notifies the framework that the internal state of
+    /// the widget has changed and needs to be updated. When `setState` is called, the framework will
+    /// rebuild the widget and its descendants, reflecting the changes made to the state. In this case,
+    /// `setState(() {});` is called after modifying the `input`, `output`, `hideinput`, and
+    /// `outputsize` variables in the `onbuttonclick` function. By calling `setState`, the UI is updated
+    /// to reflect the new values of these variables.
     setState(() {});
   }
 
@@ -98,9 +104,16 @@ class _CalculatorAppState extends State<CalculatorApp> {
   /// available space and has a dark gray color. Inside the Container, there are two Text widgets for
   /// displaying input and output, and some SizedBox widgets for spacing. Below the Container, there are
   /// several Rows of buttons for performing calculations
+  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold
+    /// The `Scaffold` widget is a basic layout structure in Flutter that provides a framework
+    /// for implementing the basic visual layout of a material design app. It provides a way to
+    /// structure the app's UI by organizing its content into different areas such as the app
+    /// bar, body, and bottom navigation bar. In this code, the `Scaffold` widget is used as the
+    /// root widget of the app's UI, and it defines the background color and the body of the app.
+    (
       backgroundColor: Colors.black,
       body: Column(
         children: [
@@ -197,6 +210,9 @@ class _CalculatorAppState extends State<CalculatorApp> {
             padding: const EdgeInsets.all(22),
             primary: buttonbgColor,
           ),
+          /// The `onPressed` property of the `ElevatedButton` widget is used to specify the function
+          /// that should be called when the button is pressed. In this case, the `onbuttonclick`
+          /// function is assigned to the `onPressed` property.
           onPressed: () => onbuttonclick(text),
           child: Text(
             text,
